@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: ./Expense_Tracker_Backend
+      dockerfile: Dockerfile
+    container_name: expense-tracker-app
+    restart: on-failure
+    ports:
+      - "8082:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/expense_tracker
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Yash@2012
+
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: expense_tracker
+      MYSQL_ROOT_PASSWORD: Yash@2012
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pYash@2012"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./expense_tracker_frontend
+      dockerfile: Dockerfile
+    container_name: expense-tracker-ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - app
+      
