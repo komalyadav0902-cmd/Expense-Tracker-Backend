@@ -18,7 +18,7 @@
 	<artifactId>Expense_Tracker_Backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ExpenseTracker2</name>
-	<description>Expense Tracker App</description>
+	<description>Expense Tracker Backend Production Build v2.0.1</description>
 
 	<!-- ✅ Java version REQUIRED for Spring Boot 3 -->
 	<properties>
