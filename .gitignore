@@ -1,0 +1,19 @@
+# IDE and System Files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Java / Spring Boot Backend
+**/target/
+**.class
+*.jar
+*.war
+
+# Node.js / Frontend
+**/node_modules/
+**/dist/
+**/build/
+.env
+.env.local
