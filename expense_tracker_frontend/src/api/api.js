@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// This creates a custom axios instance with your backend URL as the base
-// Instead of writing full URL every time, we just write /expenses, /auth/login etc.
+// Reads the environment variable from Vercel in production 
+// Falls back to localhost when running on your computer
 const api = axios.create({
-  baseURL: 'http://localhost:8082'
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8082'
 })
 
 // This is called an INTERCEPTOR
