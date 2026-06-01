@@ -42,7 +42,10 @@ npm install
 ```
 
 ### 4. Environment Configuration
-
+Create a `.env` file in the root of this frontend directory by copying the provided example template:
+```bash
+cp .env.example .env
+```
 
 ### 5. Run Command
 ```bash
