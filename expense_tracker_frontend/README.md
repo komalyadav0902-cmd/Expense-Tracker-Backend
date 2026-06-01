@@ -23,3 +23,32 @@ You can access the live deployed client application here: [Expense Tracker Web A
 
 ---
 
+## How to Run the Project Locally
+
+### 1. Prerequisites
+- Node.js (v18+)
+- npm
+- Git
+
+### 2. Clone the Repository
+```bash
+git clone https://github.com/Komal0902Yadav/Expense-Tracker-Backend.git
+cd expense_tracker_frontend
+```
+
+### 3. Install Dependencies
+```bash
+npm install
+```
+
+### 4. Environment Configuration
+
+
+### 5. Run Command
+```bash
+npm run dev
+```
+
+### 6. Local Access
+Once running, the application will be accessible at:
+`http://localhost:5173`
