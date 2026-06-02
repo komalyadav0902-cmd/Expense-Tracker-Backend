@@ -38,7 +38,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                        .requestMatchers("/api/expenses/ping").permitAll()
+//                        .requestMatchers("/api/expenses/ping").permitAll()
+                        .requestMatchers("/public-ping").permitAll()
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html",
                                 "/webjars/**").permitAll()
                         .anyRequest().authenticated())

@@ -30,6 +30,11 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
         throws ServletException, IOException{
 
+        if ("/public-ping".equals(request.getServletPath())) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         String path = request.getRequestURI();
         if (path.startsWith("/swagger-ui") ||
                 path.startsWith("/v3/api-docs") ||
