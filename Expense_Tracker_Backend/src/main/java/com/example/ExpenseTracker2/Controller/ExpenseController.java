@@ -52,6 +52,11 @@ public class ExpenseController {
         return expenseService.getAllExpenses(pageable, username);
     }
 
+    @GetMapping("/ping")
+    public ResponseEntity<String> ping() {
+        return ResponseEntity.ok("OK");
+    }
+
     @GetMapping("/{id}")
     public ExpenseResponseDTO getExpenseById(@PathVariable Long id, Authentication authentication) {
         String username = authentication.getName();
